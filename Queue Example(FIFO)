@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+
+namespace Learn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Queue<string> queue = new Queue<string>();
+
+            //Enque insert items in queue
+            queue.Enqueue("Bobby"); //First In Queue
+            queue.Enqueue("Kyujin");
+            queue.Enqueue("Ryujin");
+            queue.Enqueue("Killua"); //Last In Queue
+
+            foreach (string x in queue) {
+                Console.WriteLine($"In Line: {x}");
+            }
+
+            //Return the count of items in queue
+            Console.WriteLine($"Count: {queue.Count}");
+
+            //Dequeue remove the first inserted item in queue
+            Console.WriteLine($"Done: {queue.Dequeue()}");
+
+            foreach (string x in queue)
+            {
+                Console.WriteLine($"In Line: {x}");
+            }
+
+            Console.WriteLine($"Count: {queue.Count}");
+
+            //Return the first item in queue
+            Console.WriteLine($"The first in line is: {queue.Peek()}");
+
+            //Check if queue contains specific item.
+            Console.WriteLine($"Contains Bobby?: {queue.Contains("Bobby")}"); //false because bobby already finish.
+            Console.WriteLine($"Contains Bobby?: {queue.Contains("Kyujin")}"); //true because kyujin still in line.
+
+            queue.Clear(); //Remove all items from queue
+            Console.WriteLine($"Count: {queue.Count}");//just to make sure it's already removed.
+            Console.ReadKey();
+        }
+    }
+}
