@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+
+namespace Learn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Stack<string> mystack = new Stack<string>();
+            mystack.Push("Android"); //Insert an item to the stack
+            mystack.Push("IOS");
+            mystack.Push("Windows");
+            mystack.Push("Mac");
+
+            foreach (string x in mystack)
+                Console.WriteLine($"Item: {x}");
+
+            String apple = mystack.Pop(); //Remove the last inserted item from the stack
+            
+            foreach (string x in mystack)
+                Console.WriteLine($"Item: {x}");
+            Console.WriteLine($"Popped: {apple}");
+            Console.WriteLine($"Peeked: {mystack.Peek()}"); //Peek the top item of the stack
+            
+            //Will show if the stack contains specific item.
+            Console.WriteLine($"Contains Mac? {mystack.Contains("Mac")}"); //false because it's already popped.
+            Console.WriteLine($"Contains Android? {mystack.Contains("Android")}"); //true because stack contains android.
+
+            //Return the count of items in stack
+            Console.WriteLine($"Count: {mystack.Count}");
+
+            //Remove all items from the stack
+            mystack.Clear();
+
+            //Recount to make sure it's all cleared
+            Console.WriteLine($"Cleared Count: {mystack.Count}");
+            Console.ReadKey();
+        }
+    }
+}
